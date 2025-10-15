@@ -1,5 +1,6 @@
 {
-    "tops": {
+    "tops": [
+    {
         "img": "banana-shirt.jpg",
         "type": "short-sleeve",
         "inWardrobe": true,
@@ -53,4 +54,5 @@
         "inWardrobe": true,
         "description": "white sweater"
     }
+]
 }
