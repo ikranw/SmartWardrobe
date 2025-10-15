@@ -1,8 +1,65 @@
 {
-    "shoes": {
-        "img": "",
-        "type": "",
-        "inWardrobe": "",
-        "description": ""
-    }
+    "shoes": [
+        {
+        "img": "birks.webp",
+        "type": "sandals",
+        "inWardrobe": "true",
+        "description": "Birkenstocks"
+        },
+        {
+        "img": "cowboyboots.webp",
+        "type": "boots",
+        "inWardrobe": "true",
+        "description": "Cowboy Boots"
+        },
+        {
+        "img": "fishnetheels.webp",
+        "type": "sandals",
+        "inWardrobe": "true",
+        "description": "Fishnet 5inch Heels"
+        },
+        {
+        "img": "kneehighboots.jpeg",
+        "type": "boots",
+        "inWardrobe": "true",
+        "description": "Over the Knee Black Boots"
+        },
+        {
+        "img": "newbalances.jpeg",
+        "type": "sneakers",
+        "inWardrobe": "true",
+        "description": "New Balance 530"
+        },
+        {
+        "img": "pearlsneaker.jpeg",
+        "type": "sneakers",
+        "inWardrobe": "true",
+        "description": "Pearl Black Platform Sneakers"
+        },
+        {
+        "img": "pinkjordans.jpg",
+        "type": "sneakers",
+        "inWardrobe": "true",
+        "description": "Pink Jordans"
+        },
+        {
+        "img": "platformheels.webp",
+        "type": "sandals",
+        "inWardrobe": "true",
+        "description": "Ankle Strap Black Platform Heels"
+        },
+        {
+        "img": "pumas.jpeg",
+        "type": "sneakers",
+        "inWardrobe": "true",
+        "description": "Puma 1100"
+        },
+        {
+        "img": "tanflipflops.webp",
+        "type": "sandals",
+        "inWardrobe": "true",
+        "description": "Tan Thong Flip Flops"
+        }
+
+]
 }
