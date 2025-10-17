@@ -4,5 +4,5 @@ import { svelte } from '@sveltejs/vite-plugin-svelte'
 // https://vite.dev/config/
 export default defineConfig({
   base: '/SmartWardrobe/',
-  plugins: [svelte()],
+  plugins: [svelte()]
 })
