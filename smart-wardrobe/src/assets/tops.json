@@ -1,55 +1,55 @@
 {
     "tops": [
     {
-        "img": "banana-shirt.jpg",
+        "img": "../../public/tops/banana-shirt.jpg",
         "type": "short-sleeve",
         "inWardrobe": true,
         "description": "banana button-up short-sleeve"
     },
     {
-        "img": "blue-sweater.jpg",
-        "type": "sweater",
+        "img": "../../public/tops/blue-sweater-vest.jpg",
+        "type": "sweater-vest",
         "inWardrobe": true,
-        "description": "blue sweater"
+        "description": "blue sweater vest"
     },
     {
-        "img": "blue-tank.jpg",
+        "img": "../../public/tops/blue-tank.jpg",
         "type": "tank",
         "inWardrobe": true,
         "description": "blue tank top"
     },
     {
-        "img": "fish-shirt.jpg",
+        "img": "../../public/tops/fish-shirt.jpg",
         "type": "short-sleeve",
         "inWardrobe": true,
         "description": "blue short sleeve with fish"
     },
     {
-        "img": "frgog-shirt.jpg",
+        "img": "../../public/tops/frog-shirt.jpg",
         "type": "short-sleeve",
         "inWardrobe": true,
         "description": "white short sleeve with frogs"
     },
     {
-        "img": "plant-sweater.jpg",
+        "img": "../../public/tops/plant-sweater.jpg",
         "type": "sweater",
         "inWardrobe": true,
         "description": "brown sweater with veggies"
     },
     {
-        "img": "pom-tank.jpg",
+        "img": "../../public/tops/pom-tank.jpg",
         "type": "tank",
         "inWardrobe": true,
         "description": "blue tank top with pomegranets"
     },
     {
-        "img": "white-dress.jpg",
+        "img": "../../public/tops/white-dress.jpg",
         "type": "dress",
         "inWardrobe": true,
         "description": "white dress"
     },
     {
-        "img": "white-sweater.jpg",
+        "img": "../../public/tops/white-sweater.jpg",
         "type": "sweater",
         "inWardrobe": true,
         "description": "white sweater"
