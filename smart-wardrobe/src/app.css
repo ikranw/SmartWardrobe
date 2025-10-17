@@ -1,66 +1,85 @@
 :root {
-  color: black;
-  background-color: white;
-}
+  color: black; 
+  background-color: pink; } 
 
-.main-view {
-  grid-area: mv;
-  /* background-image: radial-gradient(pink, purple); */
-}
-
-.testing {
-  grid-area: tst;
-  background-color: lightblue;
-}
-
-.full-page {
+.html{
+  height: 100%;
   width: 100%;
-  max-width: 100vw;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: auto;
-  grid-template-areas: "mv mv mv tst";
-  height: 100%
 }
+.full-page { 
+    width: 100vw; 
+    max-width: 100vw; 
+    height: 100vh;
+    gap: 0;
+    display: grid; 
+    grid-template-columns: 3fr 1fr; 
+    grid-template-rows: 100vh; 
+} 
 
-.item-img {
-  max-height: 200px;
-  max-width: 200px;
-}
+.main-view { 
+  grid-area: mv; 
+  background-color: #aacc96; 
+  justify-content: center; 
+  align-items: center; 
+  width: 100%; 
+  height: 100%; 
+  box-sizing: border-box; 
+  display: grid; 
+  padding-left: 20%; 
+  padding-right:20%; 
+  padding-top: 30%; 
+  padding-bottom: 10%; } 
 
-.top-picker {
-  max-height: 500px;
-  outline: 2px solid black;
-  border-radius: 25px;
-  width: 400px;
-  padding-bottom: 10px;
-  background-color: white;
-}
 
-.top-view {
+.wardrobe-container{
+  background-color: rgb(128, 128, 252);       
+  border-radius: 35px;           
+  border: 2px solid black;      
+  padding: 30px;                 
   display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-top: 10px;
+  flex-direction: column;
+  align-items: center;         
+  gap: 20px;                     
+  box-shadow: 0 4px 10px rgba(224, 49, 49, 0.2);
 }
+  
+.testing { 
+  grid-area: tst; 
+  background-color: lightblue; } 
+  
+.item-img { 
+  max-height: 200px; 
+  max-width: 200px; } 
 
-.top-description {
-  text-align: center;
-  vertical-align: middle
-}
+.top-picker { 
+  max-height: 500px; 
+  outline: 2px solid black; 
+  border-radius: 15px; 
+  width: 400px; 
+  padding: 20px; 
+  background-color: white; } 
 
-.top-img {
-  width: 250px;
-  text-align: center
-}
+.top-view { 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  padding-top: 20px; } 
+  
+.top-description { 
+  text-align: center; 
+  vertical-align: middle } 
 
-.wardrobe {
-  border:2px solid black;
-  border-radius: 10px;
-  font-size: 20px;
-  width: 150px;
-  background-color: #aacc96;
-  color: #25533f;
-  padding: 5px;
-  margin-left: 125px
-}
+.top-img { 
+  width: 250px; 
+  text-align: center } 
+
+.wardrobe { 
+  border:2px solid black; 
+  border-radius: 10px; 
+  font-size: 20px; 
+  width: 150px; 
+  background-color: #aacc96; 
+  color: #25533f; 
+  padding: 5px; 
+  margin-left: 125px; 
+  align-items: center; }

@@ -9,20 +9,18 @@ console.log(tops)
 console.log(bottoms)
 console.log(shoes)
 
-
 </script>
 
 <main>
   <div class="full-page">
     <div class="main-view">
+      <div class="wardrobe-container">
+        <ClothesPicker type="tops"/>
+        <ClothesPicker type="bottoms" />
+        <ClothesPicker type="shoes" />
+      </div>
 
-      <ClothesPicker type="tops"/>
 
-      <ClothesPicker type="bottoms" />
-      
-      <ClothesPicker type="shoes" />
-
-      <button onclick={selectOutfit}>Select Outfit</button>
     </div>
     <div class="testing">Testing</div>
   </div>

@@ -10,4 +10,5 @@ export default app
 
 export function selectOutfit(){
   alert("Outfit Dispensed")
+  
 }
