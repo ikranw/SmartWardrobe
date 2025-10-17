@@ -1,10 +1,11 @@
 <script>
-  import { bottoms, tops } from "../data";
+  import { bottoms, shoes, tops } from "../data";
 
   const { type = "" } = $props();
 
   let t = tops;
   let b = bottoms;
+  let s = shoes;
 
   let art;
   if (type.charAt(0) == "t") {
@@ -12,6 +13,7 @@
   } else if (type.charAt(0) == "b") {
     art = b;
   } else {
+    art = s;
   }
 
   let index = $state(0);
@@ -32,6 +34,12 @@
       } else {
         index--;
       }
+    } else {
+        if (index == 0) {
+        index = shoes.length - 1;
+      } else {
+        index--;
+      }
     }
   }
 
@@ -44,6 +52,12 @@
       }
     } else if (type == "bottoms") {
       if (index == bottoms.length - 1) {
+        index = 0;
+      } else {
+        index++;
+      }
+    } else {
+        if (index == shoes.length - 1) {
         index = 0;
       } else {
         index++;
@@ -96,10 +110,10 @@
 
     <div class="top-description">
       <p style="font-size: 20px; font-weight: bold">{desc}</p>
-      {#if isInWardrobe}
-        <p class="wardrobe">In Wardrobe</p>
-      {:else}
-        <p>{isInWardrobe}</p>
+      {#if !isInWardrobe}
+        <p class="out-of-wardrobe">Out of Wardrobe</p>
+      <!-- {:else}
+        <p class="wardrobe">In Wardrobe</p> -->
       {/if}
     </div>
   </div>

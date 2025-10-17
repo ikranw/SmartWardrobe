@@ -17,9 +17,9 @@
   width: 100%;
   max-width: 100vw;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto;
-  grid-template-areas: "mv mv mv tst";
+  grid-template-areas: ". mv tst";
   height: 100%
 }
 
@@ -35,6 +35,7 @@
   width: 400px;
   padding-bottom: 10px;
   background-color: white;
+  margin-top: 20px
 }
 
 .top-view {
@@ -51,6 +52,7 @@
 
 .top-img {
   width: 250px;
+  height: 200px;
   text-align: center
 }
 
@@ -63,4 +65,19 @@
   color: #25533f;
   padding: 5px;
   margin-left: 125px
+}
+
+.out-of-wardrobe {
+  border:2px solid darkred;
+  border-radius: 10px;
+  font-size: 20px;
+  width: 150px;
+  background-color: lightpink;
+  color: darkred;
+  padding: 5px;
+  margin-left: 125px
+}
+
+.weatherwidget-io {
+  max-width: 80%;
 }
