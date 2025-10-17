@@ -1,43 +1,79 @@
-# Svelte + Vite
+# Documentation (Work in Progress / Dump of info)
 
-This template should help get you started developing with Svelte in Vite.
+## Project Overview
+Smart wardrobe desc
 
-## Recommended IDE Setup
+### Key Features
+x
 
-[VS Code](https://code.visualstudio.com/) + [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode).
+## Design Process
 
-## Need an official Svelte framework?
+### Research / Interviewing
+We started with a few external interviews to gather information on what users may want in a smart wardrobe
 
-Check out [SvelteKit](https://github.com/sveltejs/kit#readme), which is also powered by Vite. Deploy anywhere with its serverless-first approach and adapt to various platforms, with out of the box support for TypeScript, SCSS, and Less, and easily-added support for mdsvex, GraphQL, PostCSS, Tailwind CSS, and more.
+#### Questions Asked
+- Can you walk me through how you usually decide what to wear each day? In what order?
+- How do you organize your clothes right now? (e.g., by color, type, season, occasion)
+- How much control would you want—would you prefer it to recommend outfits based on factors like weather, or would you want full control?
+- How do you keep track of what's in your wardrobe right now?
 
-## Technical considerations
+#### Findings
+- Most people check weather first, then consider their daily schedule/activities
+- Common pain point: forgetting about clothes they own, leading to leaving loved pieces in the back
+- Organization varies widely (by type, by color, by formality)
+- Everyone liked having say over their outfit choice
+- People want to avoid repeating outfits too frequently, especially for work/school
+- Clean v dirty clothing status is tracked mentally/visually but imperfectly
+- Morning routine needs to be quick (under 5 minutes for outfit selection unless for special event)
 
-**Why use this over SvelteKit?**
+### Affordances / User Needs
+#### Physical Characteristics:
+- Large, fixed furniture piece
+- Requires space in front for doors to open and user to stand
+#### Affordances:
+- Doors with handles afford opening to access clothing
+- Touchscreen display affords tapping and swiping
+- Interior rods and shelves afford hanging and storing clothes
+- Screen placement affords viewing while standing
 
-- It brings its own routing solution which might not be preferable for some users.
-- It is first and foremost a framework that just happens to use Vite under the hood, not a Vite app.
 
-This template contains as little as possible to get started with Vite + Svelte, while taking into account the developer experience with regards to HMR and intellisense. It demonstrates capabilities on par with the other `create-vite` templates and is a good starting point for beginners dipping their toes into a Vite + Svelte project.
+#### User Needs
+User Need: Browse wardrobe manually when feeling creative
 
-Should you later need the extended capabilities and extensibility provided by SvelteKit, the template has been structured similarly to SvelteKit so that it is easy to migrate.
+Design Requirement: Browse mode with filters for season, type, occasion, color
 
-**Why include `.vscode/extensions.json`?**
 
-Other templates indirectly recommend extensions via the README, but this file allows VS Code to prompt the user to install the recommended extension upon opening the project.
+User Need: Track which clothes are clean vs. dirty
 
-**Why enable `checkJs` in the JS template?**
+Design Requirement: "In laundry" toggle for items; "Laundry done" button to mark all items as available again
 
-It is likely that most cases of changing variable types in runtime are likely to be accidental, rather than deliberate. This provides advanced typechecking out of the box. Should you like to take advantage of the dynamically-typed nature of JavaScript, it is trivial to change the configuration.
 
-**Why is HMR not preserving my local component state?**
+User Need: See complete outfits, not just individual pieces
 
-HMR state preservation comes with a number of gotchas! It has been disabled by default in both `svelte-hmr` and `@sveltejs/vite-plugin-svelte` due to its often surprising behavior. You can read the details [here](https://github.com/sveltejs/svelte-hmr/tree/master/packages/svelte-hmr#preservation-of-local-state).
+Design Requirement: Display top + bottom together; option to swap out individual pieces
 
-If you have state that's important to retain within a component, consider creating an external store which would not be replaced by HMR.
 
-```js
-// store.js
-// An extremely simple external store
-import { writable } from 'svelte/store'
-export default writable(0)
-```
+User Need: Save favorite outfit combinations
+
+Design Requirement: "Save preset" button to store and quickly access favorite outfits
+
+
+### Sketching and Wireframing
+put sketches here
+
+
+#### User Feedback
+put intermediate feedback here
+
+
+## Interface Design
+actual ui info / screenshots
+
+
+
+
+
+
+
+
+
