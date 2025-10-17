@@ -1,8 +1,34 @@
 {
-    "bottoms": {
-        "img": "",
-        "type": "",
-        "inWardrobe": "",
-        "description": ""
+  "bottoms": [
+    {
+      "img": "../../public/bottoms/green-pants.jpg",
+      "type": "pant",
+      "inWardrobe": true,
+      "description": "green pants"
+    },
+    {
+      "img": "../../public/bottoms/red-skirt.png",
+      "type": "skirt",
+      "inWardrobe": true,
+      "description": "red leather pants"
+    },
+    {
+      "img": "../../public/bottoms/dark-jean-shorts.jpg",
+      "type": "short",
+      "inWardrobe": true,
+      "description": "dark wash jean shorts"
+    },
+    {
+      "img": "../../public/bottoms/cutoff-shorts.jpg",
+      "type": "short",
+      "inWardrobe": true,
+      "description": "distressed jean shorts"
+    },
+    {
+        "img": "../../public/bottoms/light-jeans.jpg",
+        "type": "pant",
+      "inWardrobe": true,
+      "description": "light-wash jeans"
     }
+  ]
 }

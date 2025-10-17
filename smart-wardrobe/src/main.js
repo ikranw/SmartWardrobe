@@ -1,5 +1,6 @@
 import { mount } from 'svelte'
 import './app.css'
+// @ts-ignore
 import App from './App.svelte'
 
 const app = mount(App, {
@@ -7,3 +8,8 @@ const app = mount(App, {
 })
 
 export default app
+
+export function selectOutfit(){
+  alert("Outfit Dispensed")
+}
+
