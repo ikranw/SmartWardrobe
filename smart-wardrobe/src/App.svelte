@@ -1,10 +1,17 @@
 <script>
   import ClothesPicker from "./lib/ClothesPicker.svelte";
-
   import { tops } from "./data";
 
   function test() {
     tops[0].inWardrobe = false;
+  }
+
+  let isOpen = $state(false);
+  function stimulate() {
+    isOpen = true;
+  }
+  function reset() {
+    isOpen = false;
   }
 
   let isOutfitsDisplayed = $state(true)
@@ -72,7 +79,32 @@
 
       <button onclick={test}>Select Outfit</button>
     </div>
-    <div class="testing">Testing</div>
+    <div class="testing">
+      <div class="Header">
+        <h1>Testing UI</h1>
+        <div class ="info">
+          <button style="margin-left: 200px;" onclick= {() => alert("The smart wardrobe has touchscreens on each side and center of it. Select your choices. Once selected, the bottom drawer will automatically update and give you your selected outfit.")} > 
+            Information </button>
+        </div>
+      <div class = "interactTest">
+        {#if !isOpen}
+        <img src="/closed_wardrobe.png" alt="Closed wardrobe" />
+
+        <div class = "stimulate">
+          <button onclick={stimulate}>Stimulate</button>
+        </div>
+        {:else}
+          <img src="/open-wardrobe.png" alt="Open wardrobe" />
+          <p>The wardrobe is now open. This week:</p>
+          <div>
+            <p>8 clothing needs laundry</p>
+            <p>4 preset saved outfits worn</p>
+            <p>3 new outfits design worn</p>
+          </div>
+          <button onclick={reset}>Close Wardrobe</button>
+        {/if}
+      </div>
+    </div>
   </div>
 </main>
 

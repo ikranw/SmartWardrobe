@@ -10,7 +10,9 @@
 
 .testing {
   grid-area: tst;
-  background-color: lightblue;
+  display: flex;
+  justify-content: flex-end;
+  background-color: rgba(230, 173, 173, 0);
 }
 
 .full-page {
@@ -27,7 +29,13 @@
   max-height: 200px;
   max-width: 200px;
 }
-
+.img {
+    width: 200px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    transition: transform 0.4s ease;
+  }
 .top-picker {
   max-height: 500px;
   outline: 2px solid black;
