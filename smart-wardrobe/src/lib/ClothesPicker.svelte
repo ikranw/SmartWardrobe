@@ -1,5 +1,5 @@
 <script>
-  import { bottoms, tops, shoes } from "../data";
+  import { bottoms, shoes, tops } from "../data";
 
   const { type = "" } = $props();
 
@@ -69,7 +69,11 @@
 
   export function getSelectedIndex() {
     return index;
-}
+  }
+
+  export function resetIndex(){
+    index = 0
+  }
 
 </script>
 

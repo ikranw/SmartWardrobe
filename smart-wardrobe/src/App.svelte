@@ -25,6 +25,10 @@
     alert(
       `Removed:\nTop - ${tops[topIndex].description}\nBottom - ${bottoms[bottomIndex].description}\nShoes- ${shoes[shoesIndex].description}`
     );
+
+    topPicker.resetIndex()
+    bottomPicker.resetIndex()
+    shoesPicker.resetIndex()
   }
 
   function laundry() {
@@ -39,10 +43,10 @@
     }
 
     alert("All clothes have been returned to the wardrobe.");
-  }
 
-  function test() {
-    tops[0].inWardrobe = false;
+    topPicker.resetIndex()
+    bottomPicker.resetIndex()
+    shoesPicker.resetIndex()
   }
 
   let isOpen = $state(false);
@@ -125,7 +129,7 @@
               <!-- svelte-ignore a11y_missing_attribute -->
               <button class="arrow-button" onclick={selectSavedOutfit}
                 ><img
-                  src="../../public/outfits/{outfit}"
+                  src="/outfits/{outfit}"
                   style="max-height: 200px"
                 /></button
               >
@@ -194,13 +198,15 @@
 
   <div class="testing">
     <div class="Header">
-      <h1>Testing UI</h1>
+      <h1>Smart Wardrobe</h1>
+      <h2>Testing UI</h2>
       <div class="info">
         <button
-          style="margin-left: 200px;"
+        class="testing-button"
+        style="margin-top: 20px"
           onclick={() =>
             alert(
-              "The smart wardrobe has touchscreens on each side and center of it. Select your choices. Once selected, the bottom drawer will automatically update and give you your selected outfit."
+              "The smart wardrobe has touchscreens on each side and center of it. Select your choices. Once selected, the bottom drawer will automatically update and give you your selected outfit.\n\nYou can also select a pre-made outfit from the Saved Outfits section."
             )}
         >
           Information
@@ -211,7 +217,7 @@
           <img src="/closed_wardrobe.png" alt="Closed wardrobe" />
 
           <div class="stimulate">
-            <button onclick={stimulate}>Stimulate</button>
+            <button onclick={stimulate} class="testing-button">Stimulate</button>
           </div>
         {:else}
           <img src="/open-wardrobe.png" alt="Open wardrobe" />
@@ -221,9 +227,9 @@
             <p>4 preset saved outfits worn</p>
             <p>3 new outfits design worn</p>
           </div>
-          <button onclick={reset}>Close Wardrobe</button>
+          <button onclick={reset} class="testing-button">Close Wardrobe</button><br>
         {/if}
-        <button onclick={laundry}>Laundry</button>
+        <button onclick={laundry} class="testing-button">Laundry</button>
       </div>
     </div>
   </div>

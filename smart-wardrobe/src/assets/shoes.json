@@ -1,61 +1,61 @@
 {
     "shoes": [
         {
-        "img": "../../public/shoes/birks.webp",
+        "img": "/shoes/birks.webp",
         "type": "sandals",
         "inWardrobe": true,
         "description": "Birkenstocks"
         },
         {
-        "img": "../../public/shoes/cowboyboots.webp",
+        "img": "/shoes/cowboyboots.webp",
         "type": "boots",
         "inWardrobe": true,
         "description": "Cowboy Boots"
         },
         {
-        "img": "../../public/shoes/fishnetheels.webp",
+        "img": "/shoes/fishnetheels.webp",
         "type": "sandals",
         "inWardrobe": true,
         "description": "Fishnet 5inch Heels"
         },
         {
-        "img": "../../public/shoes/kneehighboots.jpeg",
+        "img": "/shoes/kneehighboots.jpeg",
         "type": "boots",
         "inWardrobe": true,
         "description": "Over the Knee Black Boots"
         },
         {
-        "img": "../../public/shoes/newbalances.jpeg",
+        "img": "/shoes/newbalances.jpeg",
         "type": "sneakers",
         "inWardrobe": true,
         "description": "New Balance 530"
         },
         {
-        "img": "../../public/shoes/pearlsneakers.jpeg",
+        "img": "/shoes/pearlsneakers.jpeg",
         "type": "sneakers",
         "inWardrobe": true,
         "description": "Pearl Black Platform Sneakers"
         },
         {
-        "img": "../../public/shoes/pinkjordans.jpg",
+        "img": "/shoes/pinkjordans.jpg",
         "type": "sneakers",
         "inWardrobe": true,
         "description": "Pink Jordans"
         },
         {
-        "img": "../../public/shoes/platformheels.webp",
+        "img": "/shoes/platformheels.webp",
         "type": "sandals",
         "inWardrobe": true,
         "description": "Ankle Strap Black Platform Heels"
         },
         {
-        "img": "../../public/shoes/pumas.jpeg",
+        "img": "/shoes/pumas.jpeg",
         "type": "sneakers",
         "inWardrobe": true,
         "description": "Puma 1100"
         },
         {
-        "img": "../../public/shoes/tanflipflops.webp",
+        "img": "/shoes/tanflipflops.webp",
         "type": "sandals",
         "inWardrobe": true,
         "description": "Tan Thong Flip Flops"
