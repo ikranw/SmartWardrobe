@@ -1,6 +1,6 @@
 <script>
-  import ClothesPicker from "./lib/ClothesPicker.svelte";
   import { tops } from "./data";
+  import ClothesPicker from "./lib/ClothesPicker.svelte";
 
   function test() {
     tops[0].inWardrobe = false;
@@ -53,8 +53,8 @@
 
 <main>
   <div class="full-page">
-    <div>
-      <button onclick={toggleOutfits}>Saved Outfits</button>
+    <div class="side-view">
+      <button onclick={toggleOutfits} class="main-button">Saved Outfits</button>
       <button onclick={toggleWeather}>Weather</button>
       <div hidden={!isOutfitsDisplayed}>
         <h1>Saved Outfits</h1>
@@ -71,19 +71,21 @@
       </div>
     </div>
     <div class="main-view">
+      <div style="display: inline-block">
       <ClothesPicker type="tops" />
 
       <ClothesPicker type="bottoms" />
 
       <ClothesPicker type="shoes" />
 
-      <button onclick={test}>Select Outfit</button>
+      <button onclick={test} class="main-button">Select Outfit</button>
+      </div>
     </div>
     <div class="testing">
       <div class="Header">
         <h1>Testing UI</h1>
         <div class ="info">
-          <button style="margin-left: 200px;" onclick= {() => alert("The smart wardrobe has touchscreens on each side and center of it. Select your choices. Once selected, the bottom drawer will automatically update and give you your selected outfit.")} > 
+          <button style="margin-left: 200px;" onclick= {() => alert("The smart wardrobe has touchscreens on each side and center of it. Select your choices. Once selected, the bottom drawer will automatically update and give you your selected outfit.")} >
             Information </button>
         </div>
       <div class = "interactTest">
