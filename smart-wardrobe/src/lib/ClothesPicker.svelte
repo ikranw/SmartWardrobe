@@ -1,5 +1,5 @@
 <script>
-  import { bottoms, shoes, tops } from "../data";
+  import { bottoms, tops, shoes } from "../data";
 
   const { type = "" } = $props();
 
@@ -12,8 +12,10 @@
     art = t;
   } else if (type.charAt(0) == "b") {
     art = b;
-  } else {
+  } else if (type.charAt(0) == "s"){
     art = s;
+  }
+  else{
   }
 
   let index = $state(0);
@@ -34,12 +36,12 @@
       } else {
         index--;
       }
-    } else {
-        if (index == 0) {
+    } else if (type == "shoes"){
+      if(index ==0){
         index = shoes.length - 1;
-      } else {
-        index--;
-      }
+    } else{
+      index--;
+    }
     }
   }
 
@@ -56,10 +58,10 @@
       } else {
         index++;
       }
-    } else {
-        if (index == shoes.length - 1) {
+    } else if (type == "shoes"){
+      if (index == shoes.length - 1){
         index = 0;
-      } else {
+      } else{
         index++;
       }
     }

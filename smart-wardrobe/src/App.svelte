@@ -1,6 +1,7 @@
 <script>
   import ClothesPicker from "./lib/ClothesPicker.svelte";
-  import { tops } from "./data";
+  import { bottoms, tops, shoes } from "./data";
+
 
   function test() {
     tops[0].inWardrobe = false;
