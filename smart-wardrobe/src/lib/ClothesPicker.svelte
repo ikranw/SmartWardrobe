@@ -123,5 +123,6 @@
         <p class="wardrobe">In Wardrobe</p> -->
       {/if}
     </div>
+
   </div>
 </div>

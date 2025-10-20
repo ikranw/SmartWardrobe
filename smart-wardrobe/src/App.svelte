@@ -5,7 +5,7 @@
   let topPicker;
   let bottomPicker;
   let shoesPicker;
-  
+
   function selectOutfit() {
     const topIndex = topPicker.getSelectedIndex();       
     const bottomIndex = bottomPicker.getSelectedIndex(); 
@@ -14,6 +14,7 @@
     tops[topIndex].inWardrobe = false;      
     bottoms[bottomIndex].inWardrobe = false; 
     shoes[shoesIndex].inWardrobe = false;
+
     alert(
       `Removed:\nTop - ${tops[topIndex].description}\nBottom - ${bottoms[bottomIndex].description}\Shoes- ${shoes[shoesIndex].description}`
     );
@@ -93,7 +94,8 @@
       <ClothesPicker bind:this={bottomPicker} type="bottoms" /> 
       <ClothesPicker bind:this={shoesPicker} type="shoes" />
 
-      <button onclick={test}>Select Outfit</button>
+      <button onclick={selectOutfit}>Select Outfit</button>
+      
     </div>
     <div class="testing">
       <div class="Header">
