@@ -112,10 +112,10 @@
 
     <div class="top-description">
       <p style="font-size: 20px; font-weight: bold">{desc}</p>
-      {#if isInWardrobe}
-        <p class="wardrobe">In Wardrobe</p>
-      {:else}
-        <p>{isInWardrobe}</p>
+      {#if !isInWardrobe}
+        <p class="out-of-wardrobe">Out of Wardrobe</p>
+      <!-- {:else}
+        <p class="wardrobe">In Wardrobe</p> -->
       {/if}
     </div>
   </div>
