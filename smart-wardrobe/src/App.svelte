@@ -1,5 +1,9 @@
 <script>
+<<<<<<< HEAD
   import { bottoms, shoes, tops } from "./data";
+=======
+  import { tops } from "./data";
+>>>>>>> 9432eaa398ef9c1b84c0ea76fbc0779e79f293e1
   import ClothesPicker from "./lib/ClothesPicker.svelte";
 
   let outfits = [
@@ -8,6 +12,7 @@
     "outfit-3.jpg",
     "outfit-4.jpg",
   ];
+<<<<<<< HEAD
 
   let topPicker;
   let bottomPicker;
@@ -40,6 +45,8 @@
 
     alert("All clothes have been returned to the wardrobe.");
   }
+=======
+>>>>>>> 9432eaa398ef9c1b84c0ea76fbc0779e79f293e1
 
   function test() {
     tops[0].inWardrobe = false;
