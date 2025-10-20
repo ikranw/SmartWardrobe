@@ -11,6 +11,7 @@ export default app
 
 export function selectOutfit(){
   alert("Outfit Dispensed")
+  
 }
 
 let API=import.meta.env.WEATHER_API
