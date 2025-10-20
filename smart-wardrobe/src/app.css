@@ -87,8 +87,20 @@
   font-weight: bold;
 }
 
-.weatherwidget-io {
-  max-width: 80%;
+.weather-widget{
+  display: grid;
+  background-color: AliceBlue;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: "loc con"
+}
+
+.loc {
+  grid-area: loc
+}
+
+.con {
+  grid-area: con
 }
 
 .arrow-button {
