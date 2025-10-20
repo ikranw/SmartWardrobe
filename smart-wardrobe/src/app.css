@@ -147,7 +147,8 @@
 .add-outfit {
   width: 120px;
   height: 200px;
-  border: 2px solid dimgrey
+  border: 2px solid dimgrey;
+  cursor: pointer
 }
 
 h1 {

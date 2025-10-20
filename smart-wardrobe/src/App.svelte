@@ -39,6 +39,10 @@
     alert('Add new outfit')
   }
 
+  function selectSavedOutfit(){
+    alert('Select saved outfit.')
+  }
+
   let currTemp = $state(0);
   let maxTemp = $state(0);
   let minTemp = $state(0);
@@ -83,10 +87,10 @@
           {#each outfits as outfit}
             <div class="outfit">
               <!-- svelte-ignore a11y_missing_attribute -->
-              <img
+              <button class="arrow-button" onclick={selectSavedOutfit}><img
                 src="../../public/outfits/{outfit}"
                 style="max-height: 200px"
-              />
+              /></button>
             </div>
           {/each}
           <div class="outfit">
