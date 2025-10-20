@@ -1,13 +1,20 @@
 :root {
   color: black;
   background-color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+	*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .main-view {
   grid-area: mv;
   /* background-image: radial-gradient(pink, purple); */
   background-color: #efefef;
-  text-align: center
+  text-align: center;
 }
 
 .side-view {
@@ -89,10 +96,17 @@
 
 .weather-widget{
   display: grid;
-  background-color: AliceBlue;
+  background-color: cornflowerblue;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
-  grid-template-areas: "loc con"
+  grid-template-areas: "loc con";
+  text-align: center;
+  width: 500px;
+  margin: 0 auto;
+}
+
+.weather-text {
+  font-size: x-large;
 }
 
 .loc {
@@ -115,7 +129,7 @@
   color: floralwhite;
   border-radius: 10px;
   font-size: 20px;
-  padding: 10px;
+  padding: 20px;
   outline: none;
   border: none;
   font-weight: bold;
@@ -123,5 +137,28 @@
 }
  .saved-outfits {
   display: grid;
-
+  grid-template-columns: auto auto auto;
+  text-align: center;
  }
+
+ .outfit {
+  padding-bottom: 20px;
+ }
+.add-outfit {
+  width: 120px;
+  height: 200px;
+  border: 2px solid dimgrey
+}
+
+h1 {
+  text-align: center;
+  padding: 20px
+}
+
+h3 {
+  padding-top: 20px
+}
+
+h4 {
+  padding-bottom: 20px
+}

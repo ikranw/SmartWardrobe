@@ -2,6 +2,12 @@
   import { tops } from "./data";
   import ClothesPicker from "./lib/ClothesPicker.svelte";
 
+  let outfits = [
+    "outfit-1.jpg",
+    "outfit-2.jpg",
+    "outfit-3.jpg",
+    "outfit-4.jpg",
+  ];
 
   function test() {
     tops[0].inWardrobe = false;
@@ -15,8 +21,8 @@
     isOpen = false;
   }
 
-  let isOutfitsDisplayed = $state(true)
-  let isWeatherDisplayed = $state(false)
+  let isOutfitsDisplayed = $state(true);
+  let isWeatherDisplayed = $state(false);
   function toggleOutfits() {
     isOutfitsDisplayed = true;
     isWeatherDisplayed = false;
@@ -29,9 +35,14 @@
     getWeather();
   }
 
+  function addOutfit(){
+    alert('Add new outfit')
+  }
+
   let currTemp = $state(0);
   let maxTemp = $state(0);
   let minTemp = $state(0);
+  let feelsLike = $state(0);
   let rain = $state(false);
 
   let icon = $state("");
@@ -40,94 +51,139 @@
   async function getWeather() {
     const res = await fetch(`/.netlify/functions/weather`);
     let responseData = await res.json();
+    console.log(responseData.forecast.forecastDays[0].maxTemperature.degrees);
+    console.log(responseData.currentConditions);
 
-    icon = responseData.weatherCondition.iconBaseUri + ".svg";
-    console.log(responseData.currentConditionsHistory.maxTemperature.degrees);
+    icon = responseData.currentConditions.weatherCondition.iconBaseUri + ".svg";
     maxTemp = Math.floor(
-      responseData.currentConditionsHistory.maxTemperature.degrees
+      // responseData.currentConditionsHistory.maxTemperature.degrees
+      responseData.forecast.forecastDays[0].maxTemperature.degrees
     );
     minTemp = Math.floor(
-      responseData.currentConditionsHistory.minTemperature.degrees
+      responseData.forecast.forecastDays[0].minTemperature.degrees
     );
-    condition = responseData.weatherCondition.description.text;
-    currTemp = Math.round(responseData.temperature.degrees);
-  }
-
-  async function testWeather() {
-    const res = await fetch(`/.netlify/functions/weather`);
-    let weather = await res.json();
-    console.log(weather);
+    condition =
+      responseData.currentConditions.weatherCondition.description.text;
+    currTemp = Math.round(responseData.currentConditions.temperature.degrees);
+    feelsLike = Math.round(responseData.currentConditions.feelsLikeTemperature.degrees)
   }
 </script>
 
 <main>
   <div class="full-page">
     <div class="side-view">
+      <div style="text-align: center; padding-top: 20px">
       <button onclick={toggleOutfits} class="main-button">Saved Outfits</button>
-      <button onclick={toggleWeather}>Weather</button>
-      <div hidden={!isOutfitsDisplayed}>
-        <h1>Saved Outfits</h1>
+      <button onclick={toggleWeather} class="main-button">Weather</button>
       </div>
-      <div hidden={!isWeatherDisplayed}>
-        <h1>Weather</h1>
-        <div class="weather-widget">
-          <div class="loc">
-            <h3>Cincinnati</h3>
-            <h1>{currTemp}&degF</h1>
-          </div>
+      <div hidden={!isOutfitsDisplayed}>
+        <h1>Your Saved Outfits</h1>
 
-          <div class="con">
-            <h3>{condition}</h3>
-            <img src={icon} />
+        <div class="saved-outfits">
+          {#each outfits as outfit}
+            <div class="outfit">
+              <!-- svelte-ignore a11y_missing_attribute -->
+              <img
+                src="../../public/outfits/{outfit}"
+                style="max-height: 200px"
+              />
+            </div>
+          {/each}
+          <div class="outfit">
+            <!-- svelte-ignore a11y_consider_explicit_label -->
+            <button class="add-outfit" onclick={addOutfit}
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="40"
+                height="40"
+                fill="dimgrey"
+                class="bi bi-plus-circle"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"
+                />
+                <path
+                  d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"
+                />
+              </svg></button
+            >
           </div>
         </div>
-        <p>
-          Today has a high of {maxTemp} and a low of {minTemp}. Consider
+      </div>
+      <div hidden={!isWeatherDisplayed}>
+        <h1>Your Daily Weather Forecast</h1>
+        <div>
+          <div class="weather-widget">
+            <div class="loc">
+              <h3>Cincinnati</h3>
+              <h1>{currTemp}&degF</h1>
+              <h4>Feels Like: {feelsLike}&degF</h4>
+            </div>
+
+            <div class="con">
+              <h3>{condition}</h3>
+              <img src={icon} style="padding-top: 25px" />
+            </div>
+          </div>
+        </div>
+        <div style="margin: 0 auto; width: 500px; padding-top: 20px">
+        <p class="weather-text">
+          Today has a high of {maxTemp}&degF and a low of {minTemp}&degF. Consider
           bringing a jacket for the morning.
         </p>
         {#if rain}
-          <p>
+          <p class="weather-text">
             There is a chance of rain today. Consider bringing an umbrella or
             rain jacket.
           </p>
         {/if}
+        </div>
       </div>
     </div>
     <div class="main-view">
       <div style="display: inline-block">
-      <ClothesPicker type="tops" />
+        <ClothesPicker type="tops" />
 
-      <ClothesPicker type="bottoms" />
+        <ClothesPicker type="bottoms" />
 
-      <ClothesPicker type="shoes" />
+        <ClothesPicker type="shoes" />
 
-      <button onclick={test} class="main-button">Select Outfit</button>
+        <button onclick={test} class="main-button" style="margin-top: 20px; margin-bottom: 20px ">Select Outfit</button>
       </div>
     </div>
     <div class="testing">
       <div class="Header">
         <h1>Testing UI</h1>
-        <div class ="info">
-          <button style="margin-left: 200px;" onclick= {() => alert("The smart wardrobe has touchscreens on each side and center of it. Select your choices. Once selected, the bottom drawer will automatically update and give you your selected outfit.")} >
-            Information </button>
+        <div class="info">
+          <button
+            style="margin-left: 200px;"
+            onclick={() =>
+              alert(
+                "The smart wardrobe has touchscreens on each side and center of it. Select your choices. Once selected, the bottom drawer will automatically update and give you your selected outfit."
+              )}
+          >
+            Information
+          </button>
         </div>
-      <div class = "interactTest">
-        {#if !isOpen}
-        <img src="/closed_wardrobe.png" alt="Closed wardrobe" />
+        <div class="interactTest">
+          {#if !isOpen}
+            <img src="/closed_wardrobe.png" alt="Closed wardrobe" />
 
-        <div class = "stimulate">
-          <button onclick={stimulate}>Stimulate</button>
+            <div class="stimulate">
+              <button onclick={stimulate}>Stimulate</button>
+            </div>
+          {:else}
+            <img src="/open-wardrobe.png" alt="Open wardrobe" />
+            <p>The wardrobe is now open. This week:</p>
+            <div>
+              <p>8 clothing needs laundry</p>
+              <p>4 preset saved outfits worn</p>
+              <p>3 new outfits design worn</p>
+            </div>
+            <button onclick={reset}>Close Wardrobe</button>
+          {/if}
         </div>
-        {:else}
-          <img src="/open-wardrobe.png" alt="Open wardrobe" />
-          <p>The wardrobe is now open. This week:</p>
-          <div>
-            <p>8 clothing needs laundry</p>
-            <p>4 preset saved outfits worn</p>
-            <p>3 new outfits design worn</p>
-          </div>
-          <button onclick={reset}>Close Wardrobe</button>
-        {/if}
       </div>
     </div>
   </div>
