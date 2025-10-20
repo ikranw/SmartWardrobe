@@ -9,6 +9,7 @@ console.log(tops)
 console.log(bottoms)
 console.log(shoes)
 
+
 </script>
 
 <main>
