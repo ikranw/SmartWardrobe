@@ -16,9 +16,23 @@
     shoes[shoesIndex].inWardrobe = false;
 
     alert(
-      `Removed:\nTop - ${tops[topIndex].description}\nBottom - ${bottoms[bottomIndex].description}\Shoes- ${shoes[shoesIndex].description}`
+      `Removed:\nTop - ${tops[topIndex].description}\nBottom - ${bottoms[bottomIndex].description}\nShoes- ${shoes[shoesIndex].description}`
     );
   }
+
+  function laundry() {
+  for (const item of tops) {
+    item.inWardrobe = true;
+  }
+  for (const item of bottoms) {
+    item.inWardrobe = true;
+  }
+  for (const item of shoes) {
+    item.inWardrobe = true;
+  }
+
+  alert("All clothes have been returned to the wardrobe.");
+}
 
   function test() {
     tops[0].inWardrobe = false;
@@ -95,6 +109,7 @@
       <ClothesPicker bind:this={shoesPicker} type="shoes" />
 
       <button onclick={selectOutfit}>Select Outfit</button>
+      <button onclick={laundry}>Laundry</button>
       
     </div>
     <div class="testing">
