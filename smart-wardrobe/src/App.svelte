@@ -2,6 +2,7 @@
   import { tops } from "./data";
   import ClothesPicker from "./lib/ClothesPicker.svelte";
 
+
   function test() {
     tops[0].inWardrobe = false;
   }
@@ -17,37 +18,45 @@
   let isOutfitsDisplayed = $state(true)
   let isWeatherDisplayed = $state(false)
   function toggleOutfits() {
-    isOutfitsDisplayed = true
-    isWeatherDisplayed = false
+    isOutfitsDisplayed = true;
+    isWeatherDisplayed = false;
   }
 
-  function toggleWeather(){
-    isOutfitsDisplayed = false
-    isWeatherDisplayed = true
+  function toggleWeather() {
+    isOutfitsDisplayed = false;
+    isWeatherDisplayed = true;
 
-    getWeather()
+    getWeather();
   }
 
-  let currTemp = $state(0)
-  let maxTemp = $state(0)
-  let minTemp = $state(0)
-  function getWeather(){
-    let request = "http://api.weatherapi.com/v1/forecast.json?key=b853acd0326a4155bde181823251710&q=Cincinnati&days=1&aqi=no&alerts=no"
+  let currTemp = $state(0);
+  let maxTemp = $state(0);
+  let minTemp = $state(0);
+  let rain = $state(false);
 
-    fetch(request, {
-      mode: "cors",
-    })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`HTTP error ${response.status}`);
-        }
-        return response.json();
-      })
-      .then((responseData) => {
-        currTemp = responseData.current.temp_f
-        maxTemp = responseData.forecast.forecastday[0].day.maxtemp_f
-        minTemp = responseData.forecast.forecastday[0].day.mintemp_f
-      });
+  let icon = $state("");
+  let condition = $state("");
+
+  async function getWeather() {
+    const res = await fetch(`/.netlify/functions/weather`);
+    let responseData = await res.json();
+
+    icon = responseData.weatherCondition.iconBaseUri + ".svg";
+    console.log(responseData.currentConditionsHistory.maxTemperature.degrees);
+    maxTemp = Math.floor(
+      responseData.currentConditionsHistory.maxTemperature.degrees
+    );
+    minTemp = Math.floor(
+      responseData.currentConditionsHistory.minTemperature.degrees
+    );
+    condition = responseData.weatherCondition.description.text;
+    currTemp = Math.round(responseData.temperature.degrees);
+  }
+
+  async function testWeather() {
+    const res = await fetch(`/.netlify/functions/weather`);
+    let weather = await res.json();
+    console.log(weather);
   }
 </script>
 
@@ -61,13 +70,27 @@
       </div>
       <div hidden={!isWeatherDisplayed}>
         <h1>Weather</h1>
-        <div>
-<a class="weatherwidget-io" href="https://forecast7.com/en/39d10n84d51/cincinnati/?unit=us" data-label_1="CINCINNATI" data-label_2="WEATHER" data-mode="Current" data-theme="original" >CINCINNATI WEATHER</a>
-<script>
-!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
-</script>
+        <div class="weather-widget">
+          <div class="loc">
+            <h3>Cincinnati</h3>
+            <h1>{currTemp}&degF</h1>
+          </div>
+
+          <div class="con">
+            <h3>{condition}</h3>
+            <img src={icon} />
+          </div>
         </div>
-        <p>Today has a high of {maxTemp} and a low of {minTemp}. Consider bringing a jacket for the morning.</p>
+        <p>
+          Today has a high of {maxTemp} and a low of {minTemp}. Consider
+          bringing a jacket for the morning.
+        </p>
+        {#if rain}
+          <p>
+            There is a chance of rain today. Consider bringing an umbrella or
+            rain jacket.
+          </p>
+        {/if}
       </div>
     </div>
     <div class="main-view">
