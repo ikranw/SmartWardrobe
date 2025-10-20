@@ -2,6 +2,22 @@
   import ClothesPicker from "./lib/ClothesPicker.svelte";
   import { bottoms, tops, shoes } from "./data";
 
+  let topPicker;
+  let bottomPicker;
+  let shoesPicker;
+  
+  function selectOutfit() {
+    const topIndex = topPicker.getSelectedIndex();       
+    const bottomIndex = bottomPicker.getSelectedIndex(); 
+    const shoesIndex = shoesPicker.getSelectedIndex();
+
+    tops[topIndex].inWardrobe = false;      
+    bottoms[bottomIndex].inWardrobe = false; 
+    shoes[shoesIndex].inWardrobe = false;
+    alert(
+      `Removed:\nTop - ${tops[topIndex].description}\nBottom - ${bottoms[bottomIndex].description}\Shoes- ${shoes[shoesIndex].description}`
+    );
+  }
 
   function test() {
     tops[0].inWardrobe = false;
@@ -72,11 +88,10 @@
       </div>
     </div>
     <div class="main-view">
-      <ClothesPicker type="tops" />
-
-      <ClothesPicker type="bottoms" />
-
-      <ClothesPicker type="shoes" />
+      
+      <ClothesPicker bind:this={topPicker} type="tops" />      
+      <ClothesPicker bind:this={bottomPicker} type="bottoms" /> 
+      <ClothesPicker bind:this={shoesPicker} type="shoes" />
 
       <button onclick={test}>Select Outfit</button>
     </div>

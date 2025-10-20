@@ -8,9 +8,3 @@ const app = mount(App, {
 })
 
 export default app
-
-export function selectOutfit(){
-  alert("Outfit Dispensed")
-  
-}
-

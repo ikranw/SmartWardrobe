@@ -66,6 +66,11 @@
       }
     }
   }
+
+  export function getSelectedIndex() {
+    return index;
+}
+
 </script>
 
 <div>
