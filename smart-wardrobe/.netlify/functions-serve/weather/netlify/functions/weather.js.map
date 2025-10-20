@@ -1,0 +1,8 @@
+{
+  "version": 3,
+  "sources": ["../../../../Desktop/SmartWardrobe/smart-wardrobe/netlify/functions/weather.js"],
+  "sourceRoot": "C:/Users/kelly/AppData/Local/Temp/tmp-15264-2NqtiSH8WYhz",
+  "sourcesContent": ["export async function handler(event) {\n    const key = process.env.WEATHER_API\n    try {\n        const res = await fetch(`https://weather.googleapis.com/v1/currentConditions:lookup?key=${key}&location.latitude=39.1031&location.longitude=-84.5120&unitsSystem=IMPERIAL`)\n\n        const data = await res.json()\n\n        return {\n            statusCode: 200,\n            body: JSON.stringify(data),\n        };\n\n    } catch (err) {\n        return {\n            statusCode: 500,\n            body: JSON.stringify({error: err.message})\n        }\n    }\n}\n"],
+  "mappings": ";;;;;;;;;;;;;;;;;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,eAAsB,QAAQ,OAAO;AACjC,QAAM,MAAM,QAAQ,IAAI;AACxB,MAAI;AACA,UAAM,MAAM,MAAM,MAAM,kEAAkE,GAAG,6EAA6E;AAE1K,UAAM,OAAO,MAAM,IAAI,KAAK;AAE5B,WAAO;AAAA,MACH,YAAY;AAAA,MACZ,MAAM,KAAK,UAAU,IAAI;AAAA,IAC7B;AAAA,EAEJ,SAAS,KAAK;AACV,WAAO;AAAA,MACH,YAAY;AAAA,MACZ,MAAM,KAAK,UAAU,EAAC,OAAO,IAAI,QAAO,CAAC;AAAA,IAC7C;AAAA,EACJ;AACJ;",
+  "names": []
+}
