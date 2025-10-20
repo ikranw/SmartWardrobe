@@ -67,8 +67,7 @@ put intermediate feedback here
 
 
 ## Interface Design
-actual ui info / screenshots / any tools used
-
+actual ui info / screenshots
 
 
 
