@@ -1,17 +1,11 @@
 :root {
   color: black;
+  background-color: white;
 }
 
 .main-view {
   grid-area: mv;
-  background-color: #efefef;
   /* background-image: radial-gradient(pink, purple); */
-  text-align: center;
-}
-
-.side-view {
-  grid-area: sv;
-  background-color: #efefef;
 }
 
 .testing {
@@ -27,7 +21,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto;
-  grid-template-areas: "sv mv tst";
+  grid-template-areas: ". mv tst";
   height: 100%
 }
 
@@ -43,8 +37,8 @@
     transition: transform 0.4s ease;
   }
 .top-picker {
-  height: 310px;
-  /* outline: 2px solid black; */
+  max-height: 500px;
+  outline: 2px solid black;
   border-radius: 25px;
   width: 400px;
   padding-bottom: 10px;
@@ -82,34 +76,16 @@
 }
 
 .out-of-wardrobe {
+  border:2px solid darkred;
+  border-radius: 10px;
   font-size: 20px;
-  color: rgb(213, 2, 2);
-  font-weight: bold;
+  width: 150px;
+  background-color: lightpink;
+  color: darkred;
+  padding: 5px;
+  margin-left: 125px
 }
 
 .weatherwidget-io {
   max-width: 80%;
 }
-
-.arrow-button {
-  background-color: transparent;
-  outline: none;
-  cursor: pointer;
-  border: none;
-}
-
-.main-button {
-  background-color: deeppink;
-  color: floralwhite;
-  border-radius: 10px;
-  font-size: 20px;
-  padding: 10px;
-  outline: none;
-  border: none;
-  font-weight: bold;
-  margin: 10px;
-}
- .saved-outfits {
-  display: grid;
-
- }
