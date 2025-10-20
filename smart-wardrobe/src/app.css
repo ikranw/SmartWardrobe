@@ -1,6 +1,26 @@
 :root {
-  color: black; 
-  background-color: pink; } 
+  color: black;
+  background-color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+	*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main-view {
+  grid-area: mv;
+  /* background-image: radial-gradient(pink, purple); */
+  background-color: #efefef;
+  text-align: center;
+}
+
+.side-view {
+  grid-area: sv;
+  background-color: #efefef;
+}
 
 .testing {
   grid-area: tst;
@@ -15,7 +35,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto;
-  grid-template-areas: ". mv tst";
+  grid-template-areas: "sv mv tst";
   height: 100%
 .html{
   height: 100%;
@@ -43,8 +63,7 @@
     transition: transform 0.4s ease;
   }
 .top-picker {
-  max-height: 500px;
-  outline: 2px solid black;
+  height: 310px;
   border-radius: 25px;
   width: 400px;
   padding-bottom: 10px;
@@ -102,18 +121,79 @@
 
 
 .out-of-wardrobe {
-  border:2px solid darkred;
-  border-radius: 10px;
   font-size: 20px;
-  width: 150px;
-  background-color: lightpink;
-  color: darkred;
-  padding: 5px;
-  margin-left: 125px
+  color: rgb(213, 2, 2);
+  font-weight: bold;
 }
 
-.weatherwidget-io {
-  max-width: 80%;
+.weather-widget{
+  display: grid;
+  background-color: cornflowerblue;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: "loc con";
+  text-align: center;
+  width: 500px;
+  margin: 0 auto;
+}
+
+.weather-text {
+  font-size: x-large;
+}
+
+.loc {
+  grid-area: loc
+}
+
+.con {
+  grid-area: con
+}
+
+.arrow-button {
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+  border: none;
+}
+
+.main-button {
+  background-color: deeppink;
+  color: floralwhite;
+  border-radius: 10px;
+  font-size: 20px;
+  padding: 20px;
+  outline: none;
+  border: none;
+  font-weight: bold;
+  margin: 10px;
+}
+ .saved-outfits {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  text-align: center;
+ }
+
+ .outfit {
+  padding-bottom: 20px;
+ }
+.add-outfit {
+  width: 120px;
+  height: 200px;
+  border: 2px solid dimgrey;
+  cursor: pointer
+}
+
+h1 {
+  text-align: center;
+  padding: 20px
+}
+
+h3 {
+  padding-top: 20px
+}
+
+h4 {
+  padding-bottom: 20px
 }
 .top-view { 
   display: flex; 
