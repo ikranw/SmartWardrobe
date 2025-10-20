@@ -4,7 +4,10 @@
 Smart wardrobe desc
 
 ### Key Features
-x
+- Outfit planner
+- Laundry
+- Pre-saved outfits for quicker retreival
+- Up-to-date weather data
 
 ## Design Process
 
@@ -59,12 +62,16 @@ Design Requirement: "Save preset" button to store and quickly access favorite ou
 
 
 ### Sketching and Wireframing
-put sketches here
+Check Sketches Folder
 
 
 #### User Feedback
-put intermediate feedback here
 
+Mock website Feeback
+- Have a notifcation to notify users that clothes are back in the closet after laundry
+- It would be nice to have some pre-saved outfits that I can pick and wear instead of scrolling through the options. 
+- Make Testing UI buttons bigger and make the interface more usable
+- Distinguish closet from saved outfits so its neater and more seperated. 
 
 ## Interface Design
 actual ui info / screenshots
