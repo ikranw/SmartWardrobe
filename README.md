@@ -62,7 +62,13 @@ Design Requirement: "Save preset" button to store and quickly access favorite ou
 
 
 ### Sketching and Wireframing
-Check Sketches Folder
+![alt text](https://github.com/ikranw/SmartWardrobe/blob/main/sketches/10-sketches-p1.jpg)
+![alt text](https://github.com/ikranw/SmartWardrobe/blob/main/sketches/10-sketches-p2.jpg)
+![alt text](https://github.com/ikranw/SmartWardrobe/blob/main/sketches/hybrid-sketch.PNG)
+![alt text](https://github.com/ikranw/SmartWardrobe/blob/main/sketches/initial-storyboard.pdf)
+![alt text](https://github.com/ikranw/SmartWardrobe/blob/main/sketches/simple-interface.png)
+![alt text](https://github.com/ikranw/SmartWardrobe/blob/main/sketches/three-designs.PNG)
+
 
 
 #### User Feedback
