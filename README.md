@@ -5,7 +5,7 @@ Inspired by the 2000's movie Clueless, our Smart Wardrobe helps users visualise 
 
 ### Key Features
 - Outfit planner
-- Laundry
+- Select + Laundry
 - Pre-saved outfits for quicker retreival
 - Up-to-date weather data
 
