@@ -81,23 +81,24 @@ Mock website Feeback
 
 ## Interface Design
 Overview of the website 
-![alt text]()
+![alt text](https://github.com/ikranw/SmartWardrobe/blob/main/smart-wardrobe/websiteimgs/overview.png)
 
 User can check the weather to make appropriate outfit choices 
-![alt text]()
+![alt text](https://github.com/ikranw/SmartWardrobe/blob/main/smart-wardrobe/websiteimgs/weather.png)
 
 User selects an outfit
-![alt text]()
+![alt text](https://github.com/ikranw/SmartWardrobe/blob/main/smart-wardrobe/websiteimgs/outfit%20selection.png)
 
-When user selects an outfit, it is removed from the wardrobe and moved over to the laundry feature
-![alt text]()
+When the user selects an outfit, it is removed from the wardrobe and moved over to the laundry feature
+![alt text](https://github.com/ikranw/SmartWardrobe/blob/main/smart-wardrobe/websiteimgs/outofwardrobe.png)
 
-When you're done with laundry, you'll click the laundry button and the outfits are returned back to the wardrobe
-![alt text]()
+When you're done with laundry, you'll click the laundry button and the outfits will be returned to the wardrobe
+![alt text](https://github.com/ikranw/SmartWardrobe/blob/main/smart-wardrobe/websiteimgs/laundry.png)
+![alt text](https://github.com/ikranw/SmartWardrobe/blob/main/smart-wardrobe/websiteimgs/afterlaundry.png)
 
 You can click on the Information and Stimulate Tab under Testing UI for more information about our Smart Wardrobe!
-![alt text]()
-![alt text]()
+![alt text](https://github.com/ikranw/SmartWardrobe/blob/main/smart-wardrobe/websiteimgs/stimulate.png)
+![alt text](https://github.com/ikranw/SmartWardrobe/blob/main/smart-wardrobe/websiteimgs/testinginfo.png)
 
 
 
