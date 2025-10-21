@@ -1,58 +1,58 @@
 {
     "tops": [
     {
-        "img": "../../public/tops/banana-shirt.jpg",
+        "img": "/tops/banana-shirt.jpg",
         "type": "short-sleeve",
         "inWardrobe": true,
-        "description": "banana button-up short-sleeve"
+        "description": "Banana button-up short-sleeve"
     },
     {
-        "img": "../../public/tops/blue-sweater-vest.jpg",
+        "img": "/tops/blue-sweater-vest.jpg",
         "type": "sweater-vest",
         "inWardrobe": true,
-        "description": "blue sweater vest"
+        "description": "Blue sweater vest"
     },
     {
-        "img": "../../public/tops/blue-tank.jpg",
+        "img": "/tops/blue-tank.jpg",
         "type": "tank",
         "inWardrobe": true,
-        "description": "blue tank top"
+        "description": "Blue tank top"
     },
     {
-        "img": "../../public/tops/fish-shirt.jpg",
+        "img": "/tops/fish-shirt.jpg",
         "type": "short-sleeve",
         "inWardrobe": true,
-        "description": "blue short sleeve with fish"
+        "description": "Blue short sleeve with fish"
     },
     {
-        "img": "../../public/tops/frog-shirt.jpg",
+        "img": "/tops/frog-shirt.jpg",
         "type": "short-sleeve",
         "inWardrobe": true,
-        "description": "white short sleeve with frogs"
+        "description": "White short sleeve with frogs"
     },
     {
-        "img": "../../public/tops/plant-sweater.jpg",
+        "img": "/tops/plant-sweater.jpg",
         "type": "sweater",
         "inWardrobe": true,
-        "description": "brown sweater with veggies"
+        "description": "Brown sweater with veggies"
     },
     {
-        "img": "../../public/tops/pom-tank.jpg",
+        "img": "/tops/pom-tank.jpg",
         "type": "tank",
         "inWardrobe": true,
-        "description": "blue tank top with pomegranets"
+        "description": "Blue tank top with pomegranets"
     },
     {
-        "img": "../../public/tops/white-dress.jpg",
+        "img": "/tops/white-dress.jpg",
         "type": "dress",
         "inWardrobe": true,
-        "description": "white dress"
+        "description": "White dress"
     },
     {
-        "img": "../../public/tops/white-sweater.jpg",
+        "img": "/tops/white-sweater.jpg",
         "type": "sweater",
         "inWardrobe": true,
-        "description": "white sweater"
+        "description": "White sweater"
     }
 ]
 }
