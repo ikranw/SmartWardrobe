@@ -1,4 +1,4 @@
-# Documentation (Work in Progress / Dump of info)
+# README / Documentation
 
 ## Project Overview
 Inspired by the 2000's movie Clueless, our Smart Wardrobe helps users visualise their closet and pick outfits in a faster efficient way by taking weather and previously owned outfits into consideration. 
