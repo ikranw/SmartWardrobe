@@ -1,7 +1,7 @@
 # Documentation (Work in Progress / Dump of info)
 
 ## Project Overview
-Smart wardrobe desc
+Inspired by the 2000's movie Clueless, our Smart Wardrobe helps users visualise their closet and pick outfits in a faster efficient way by taking weather and previously owned outfits into consideration. 
 
 ### Key Features
 - Outfit planner
@@ -74,7 +74,8 @@ Mock website Feeback
 - Distinguish closet from saved outfits so its neater and more seperated. 
 
 ## Interface Design
-actual ui info / screenshots
+Overview
+
 
 
 
