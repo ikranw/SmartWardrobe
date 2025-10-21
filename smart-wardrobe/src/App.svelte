@@ -54,6 +54,7 @@
 
 <main>
   <div class="full-page">
+
     <div class="Weather-Area">
       <!-- <button onclick={toggleOutfits}>Saved Outfits</button> -->
       <!-- <button onclick={toggleWeather}>Weather</button> -->
@@ -75,6 +76,7 @@
         <h3>Today, expect a high {maxTemp}° and a low of {minTemp}°. Consider bringing a jacket.</h3>
       </div>
     </div>
+
 
     <div class="main-view">
       <div class="wardrobe-container">
