@@ -72,7 +72,7 @@
   <div class="top-picker">
     <div class="top-view">
       <!-- svelte-ignore a11y_consider_explicit_label -->
-      <button onclick={left}>
+      <button onclick={left} class="arrow-button">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="16"
@@ -93,7 +93,7 @@
       </div>
 
       <!-- svelte-ignore a11y_consider_explicit_label -->
-      <button onclick={right}>
+      <button onclick={right} class="arrow-button">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="16"

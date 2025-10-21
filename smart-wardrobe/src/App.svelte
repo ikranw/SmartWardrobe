@@ -1,7 +1,13 @@
 <script>
+  import { tops } from "./data";
   import ClothesPicker from "./lib/ClothesPicker.svelte";
-  import { bottoms, tops, shoes } from "./data";
 
+  let outfits = [
+    "outfit-1.jpg",
+    "outfit-2.jpg",
+    "outfit-3.jpg",
+    "outfit-4.jpg",
+  ];
 
   function test() {
     tops[0].inWardrobe = false;
@@ -15,109 +21,176 @@
     isOpen = false;
   }
 
-  let isOutfitsDisplayed = $state(true)
-  let isWeatherDisplayed = $state(true)
+  let isOutfitsDisplayed = $state(true);
+  let isWeatherDisplayed = $state(false);
   function toggleOutfits() {
-    isOutfitsDisplayed = true
-    isWeatherDisplayed = false
+    isOutfitsDisplayed = true;
+    isWeatherDisplayed = false;
   }
 
-  function toggleWeather(){
-    isOutfitsDisplayed = false
-    isWeatherDisplayed = true
+  function toggleWeather() {
+    isOutfitsDisplayed = false;
+    isWeatherDisplayed = true;
 
-    getWeather()
+    getWeather();
   }
 
-  let currTemp = $state(0)
-  let maxTemp = $state(0)
-  let minTemp = $state(0)
-  function getWeather(){
-    let request = "http://api.weatherapi.com/v1/forecast.json?key=b853acd0326a4155bde181823251710&q=Cincinnati&days=1&aqi=no&alerts=no"
+  function addOutfit(){
+    alert('Add new outfit')
+  }
 
-    fetch(request, {
-      mode: "cors",
-    })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`HTTP error ${response.status}`);
-        }
-        return response.json();
-      })
-      .then((responseData) => {
-        currTemp = responseData.current.temp_f
-        maxTemp = responseData.forecast.forecastday[0].day.maxtemp_f
-        minTemp = responseData.forecast.forecastday[0].day.mintemp_f
-      });
+  function selectSavedOutfit(){
+    alert('Select saved outfit.')
+  }
+
+  let currTemp = $state(0);
+  let maxTemp = $state(0);
+  let minTemp = $state(0);
+  let feelsLike = $state(0);
+  let rain = $state(false);
+
+  let icon = $state("");
+  let condition = $state("");
+
+  async function getWeather() {
+    const res = await fetch(`/.netlify/functions/weather`);
+    let responseData = await res.json();
+    console.log(responseData.forecast.forecastDays[0].maxTemperature.degrees);
+    console.log(responseData.currentConditions);
+
+    icon = responseData.currentConditions.weatherCondition.iconBaseUri + ".svg";
+    maxTemp = Math.floor(
+      // responseData.currentConditionsHistory.maxTemperature.degrees
+      responseData.forecast.forecastDays[0].maxTemperature.degrees
+    );
+    minTemp = Math.floor(
+      responseData.forecast.forecastDays[0].minTemperature.degrees
+    );
+    condition =
+      responseData.currentConditions.weatherCondition.description.text;
+    currTemp = Math.round(responseData.currentConditions.temperature.degrees);
+    feelsLike = Math.round(responseData.currentConditions.feelsLikeTemperature.degrees)
   }
 </script>
 
 <main>
   <div class="full-page">
+    <div class="side-view">
+      <div style="text-align: center; padding-top: 20px">
+      <button onclick={toggleOutfits} class="main-button">Saved Outfits</button>
+      <button onclick={toggleWeather} class="main-button">Weather</button>
+      </div>
+      <div hidden={!isOutfitsDisplayed}>
+        <h1>Your Saved Outfits</h1>
 
-    <div class="Weather-Area">
-      <!-- <button onclick={toggleOutfits}>Saved Outfits</button> -->
-      <!-- <button onclick={toggleWeather}>Weather</button> -->
-      <div>
-        <h1>Weather</h1>
-        {getWeather()}
-        <div>
-          <a class="weatherwidget-io" href="https://forecast7.com/en/39d10n84d51/cincinnati/?unit=us" data-label_1="CINCINNATI" data-label_2="WEATHER" data-mode="Current" data-theme="original" >CINCINNATI WEATHER</a>
-          <script>
-            !function(d,s,id){
-              var js,fjs=d.getElementsByTagName(s)[0];
-              if(!d.getElementById(id)){js=d.createElement(s);
-              js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';
-              fjs.parentNode.insertBefore(js,fjs);}}
-              (document,'script','weatherwidget-io-js');
-          </script>
+        <div class="saved-outfits">
+          {#each outfits as outfit}
+            <div class="outfit">
+              <!-- svelte-ignore a11y_missing_attribute -->
+              <button class="arrow-button" onclick={selectSavedOutfit}><img
+                src="../../public/outfits/{outfit}"
+                style="max-height: 200px"
+              /></button>
+            </div>
+          {/each}
+          <div class="outfit">
+            <!-- svelte-ignore a11y_consider_explicit_label -->
+            <button class="add-outfit" onclick={addOutfit}
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="40"
+                height="40"
+                fill="dimgrey"
+                class="bi bi-plus-circle"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"
+                />
+                <path
+                  d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"
+                />
+              </svg></button
+            >
+          </div>
         </div>
-        <h2>Current weather is {currTemp}° Farhenheit </h2>
-        <h3>Today, expect a high {maxTemp}° and a low of {minTemp}°. Consider bringing a jacket.</h3>
+      </div>
+      <div hidden={!isWeatherDisplayed}>
+        <h1>Your Daily Weather Forecast</h1>
+        <div>
+          <div class="weather-widget">
+            <div class="loc">
+              <h3>Cincinnati</h3>
+              <h1>{currTemp}&degF</h1>
+              <h4>Feels Like: {feelsLike}&degF</h4>
+            </div>
+
+            <div class="con">
+              <h3>{condition}</h3>
+              <img src={icon} style="padding-top: 25px" />
+            </div>
+          </div>
+        </div>
+        <div style="margin: 0 auto; width: 500px; padding-top: 20px">
+        <p class="weather-text">
+          Today has a high of {maxTemp}&degF and a low of {minTemp}&degF. Consider
+          bringing a jacket for the morning.
+        </p>
+        {#if rain}
+          <p class="weather-text">
+            There is a chance of rain today. Consider bringing an umbrella or
+            rain jacket.
+          </p>
+        {/if}
+        </div>
       </div>
     </div>
 
 
     <div class="main-view">
-      <div class="wardrobe-container">
+      <div style="display: inline-block">
         <ClothesPicker type="tops" />
 
         <ClothesPicker type="bottoms" />
 
         <ClothesPicker type="shoes" />
 
-        <button  onclick={test} class="outfitbuttons">Select Outfit</button>
-        <div hidden={!isOutfitsDisplayed}>
-          <button onclick={toggleOutfits} class="buttons">View Saved Outfits</button>
-        </div>
+        <button onclick={test} class="main-button" style="margin-top: 20px; margin-bottom: 20px ">Select Outfit</button>
       </div>
-      
     </div>
 
     <div class="testing">
       <div class="Header">
         <h1>Testing UI</h1>
-        <div class ="info">
-          <button style="margin-left: 200px;" onclick= {() => alert("The smart wardrobe has touchscreens on each side and center of it. Select your choices. Once selected, the bottom drawer will automatically update and give you your selected outfit.")} > 
-            Information </button>
+        <div class="info">
+          <button
+            style="margin-left: 200px;"
+            onclick={() =>
+              alert(
+                "The smart wardrobe has touchscreens on each side and center of it. Select your choices. Once selected, the bottom drawer will automatically update and give you your selected outfit."
+              )}
+          >
+            Information
+          </button>
         </div>
-      <div class = "interactTest">
-        {#if !isOpen}
-        <img src="/closed_wardrobe.png" alt="Closed wardrobe" />
+        <div class="interactTest">
+          {#if !isOpen}
+            <img src="/closed_wardrobe.png" alt="Closed wardrobe" />
 
-        <div class = "stimulate">
-          <button onclick={stimulate}>Stimulate</button>
+            <div class="stimulate">
+              <button onclick={stimulate}>Stimulate</button>
+            </div>
+          {:else}
+            <img src="/open-wardrobe.png" alt="Open wardrobe" />
+            <p>The wardrobe is now open. This week:</p>
+            <div>
+              <p>8 clothing needs laundry</p>
+              <p>4 preset saved outfits worn</p>
+              <p>3 new outfits design worn</p>
+            </div>
+            <button onclick={reset}>Close Wardrobe</button>
+          {/if}
         </div>
-        {:else}
-          <img src="/open-wardrobe.png" alt="Open wardrobe" />
-          <p>The wardrobe is now open. This week:</p>
-          <div>
-            <p>8 clothing needs laundry</p>
-            <p>4 preset saved outfits worn</p>
-            <p>3 new outfits design worn</p>
-          </div>
-          <button onclick={reset}>Close Wardrobe</button>
-        {/if}
       </div>
     </div>
   </div>

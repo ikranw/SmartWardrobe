@@ -1,10 +1,13 @@
 # Documentation (Work in Progress / Dump of info)
 
 ## Project Overview
-Smart wardrobe desc
+Inspired by the 2000's movie Clueless, our Smart Wardrobe helps users visualise their closet and pick outfits in a faster efficient way by taking weather and previously owned outfits into consideration. 
 
 ### Key Features
-x
+- Outfit planner
+- Laundry
+- Pre-saved outfits for quicker retreival
+- Up-to-date weather data
 
 ## Design Process
 
@@ -59,17 +62,42 @@ Design Requirement: "Save preset" button to store and quickly access favorite ou
 
 
 ### Sketching and Wireframing
-put sketches here
+![alt text](https://github.com/ikranw/SmartWardrobe/blob/main/sketches/10-sketches-p1.jpg)
+![alt text](https://github.com/ikranw/SmartWardrobe/blob/main/sketches/10-sketches-p2.jpg)
+![alt text](https://github.com/ikranw/SmartWardrobe/blob/main/sketches/hybrid-sketch.PNG)
+![alt text](https://github.com/ikranw/SmartWardrobe/blob/main/sketches/initial-storyboard.pdf)
+![alt text](https://github.com/ikranw/SmartWardrobe/blob/main/sketches/simple-interface.png)
+![alt text](https://github.com/ikranw/SmartWardrobe/blob/main/sketches/three-designs.PNG)
+
 
 
 #### User Feedback
-put intermediate feedback here
 
+Mock website Feeback
+- Have a notifcation to notify users that clothes are back in the closet after laundry
+- It would be nice to have some pre-saved outfits that I can pick and wear instead of scrolling through the options. 
+- Make Testing UI buttons bigger and make the interface more usable
+- Distinguish closet from saved outfits so its neater and more seperated. 
 
 ## Interface Design
-actual ui info / screenshots / any tools used
+Overview of the website 
+![alt text]()
 
+User can check the weather to make appropriate outfit choices 
+![alt text]()
 
+User selects an outfit
+![alt text]()
+
+When user selects an outfit, it is removed from the wardrobe and moved over to the laundry feature
+![alt text]()
+
+When you're done with laundry, you'll click the laundry button and the outfits are returned back to the wardrobe
+![alt text]()
+
+You can click on the Information and Stimulate Tab under Testing UI for more information about our Smart Wardrobe!
+![alt text]()
+![alt text]()
 
 
 
