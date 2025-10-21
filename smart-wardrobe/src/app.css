@@ -33,6 +33,7 @@
   width: 100%;
   max-width: 100vw;
   display: grid;
+  gap: 0;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto;
   grid-template-areas: "sv mv tst";

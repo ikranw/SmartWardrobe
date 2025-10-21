@@ -145,6 +145,8 @@
         </div>
       </div>
     </div>
+
+
     <div class="main-view">
       <div style="display: inline-block">
         <ClothesPicker type="tops" />
@@ -156,6 +158,7 @@
         <button onclick={test} class="main-button" style="margin-top: 20px; margin-bottom: 20px ">Select Outfit</button>
       </div>
     </div>
+
     <div class="testing">
       <div class="Header">
         <h1>Testing UI</h1>
