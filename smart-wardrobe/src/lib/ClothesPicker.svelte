@@ -72,6 +72,7 @@
   }
 
   export function resetIndex(){
+    index = 1
     index = 0
   }
 
