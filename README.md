@@ -80,9 +80,24 @@ Mock website Feeback
 - Distinguish closet from saved outfits so its neater and more seperated. 
 
 ## Interface Design
-Overview
+Overview of the website 
+![alt text]()
 
+User can check the weather to make appropriate outfit choices 
+![alt text]()
 
+User selects an outfit
+![alt text]()
+
+When user selects an outfit, it is removed from the wardrobe and moved over to the laundry feature
+![alt text]()
+
+When you're done with laundry, you'll click the laundry button and the outfits are returned back to the wardrobe
+![alt text]()
+
+You can click on the Information and Stimulate Tab under Testing UI for more information about our Smart Wardrobe!
+![alt text]()
+![alt text]()
 
 
 
