@@ -108,6 +108,13 @@ You can click on the Information and Stimulate Tab under Testing UI for more inf
 ![alt text](https://github.com/ikranw/SmartWardrobe/blob/main/smart-wardrobe/websiteimgs/stimulate.png)
 ![alt text](https://github.com/ikranw/SmartWardrobe/blob/main/smart-wardrobe/websiteimgs/testinginfo.png)
 
+#### Future Work
+Random Outfit Generator: Have the UI randomly generate an outfit. Helps users saves time. 
+Filters: Filters for color, type, style, occasion, and more.
+More Outfit Pieces: The option to scroll through jewelry, belts, scarfs, and more. 
+Upload images: A way of having users upload new clothes and update system through images taken. 
+
+
 
 
 
