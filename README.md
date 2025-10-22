@@ -1,7 +1,15 @@
 # Smart Wardrobe
 
 ## Project Overview
-Inspired by the 2000's movie Clueless, our Smart Wardrobe helps users visualise their closet and pick outfits in a faster efficient way by taking weather and previously owned outfits into consideration. 
+Inspired by the 2000's movie Clueless, our Smart Wardrobe helps users visualise their closet and pick outfits in a faster efficient way by taking weather and previously owned outfits into consideration.
+
+### Link to site
+
+[Smart wardrobe!](https://smart-wardrobe-project.netlify.app/)
+
+### Demo video link
+
+[Demo link](https://mailuc-my.sharepoint.com/:v:/g/personal/riderfm_mail_uc_edu/EYDpRLXaYrZFtLASV7EEkX0Ba2bu8dFNt8CuPB3SFj0yPA?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=GWw23e)
 
 ### Key Features
 - Outfit planner
